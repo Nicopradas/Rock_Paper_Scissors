@@ -17,7 +17,8 @@ CREATE A FUNCTION THAT IS NAME GETCOMPUTERCHOICE
 CREATE A FUNCTION THAT IS NAME IS GETHUMANCHOICE THAT TAKES ONE VALUE AS AN ARGUMENT
     IF THE VALUE IS ROCK RETURN PAPER
     ELSE IF THE VALUE IS PAPER RETURN SCISSORS
-    IF THE VALUE IS ANYTHING ELSE RETURN ROCK
+    IF THE VALUE IS SCISSORS  RETURN ROCK
+    IF THE VALUE IS ANYTHING ELSE RETURN AN ALERT IT HAS TO BE ROCK PAPER OR SCISSORS
 
 */
 const ROCK = 'ROCK';
@@ -38,18 +39,21 @@ function getComputerChoice(){
     
 }
 
-function getHumanChoice(choice){
+function getHumanChoice(){
 
-    choice = prompt('"ROCK" "PAPER" OR "SCISSORS"?¿');
+    let choice = prompt('"ROCK" "PAPER" OR "SCISSORS"?¿');
     if (choice === ROCK){
         return PAPER;
     } else if (choice === PAPER){
         return SCISSORS;
-    } else {
+    } else if (choice === SCISSORS){
         return ROCK;
+    } else {
+        return alert('It has to be ROCK PAPER OR SCISSORS');
     }
 
 }
 
+console.log(getHumanChoice());
 
 
