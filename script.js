@@ -39,6 +39,8 @@ function getComputerChoice(){
 }
 
 function getHumanChoice(choice){
+
+    choice = prompt('"ROCK" "PAPER" OR "SCISSORS"?¿');
     if (choice === ROCK){
         return PAPER;
     } else if (choice === PAPER){
