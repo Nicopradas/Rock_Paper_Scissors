@@ -14,16 +14,17 @@ CREATE A FUNCTION THAT IS NAME GETCOMPUTERCHOICE
     IF RANDOM NUMBER IS ANYTHING ELSE, RETURNS VARIABLE SCISSORS
 
 
-CREATE A FUNCTION THAT IS NAME IS GETHUMANCHOICE THAT TAKES ONE VALUE AS AN ARGUMENT
-    IF THE VALUE IS ROCK RETURN PAPER
-    ELSE IF THE VALUE IS PAPER RETURN SCISSORS
-    IF THE VALUE IS SCISSORS  RETURN ROCK
-    IF THE VALUE IS ANYTHING ELSE RETURN AN ALERT IT HAS TO BE ROCK PAPER OR SCISSORS
+CREATE A FUNCTION THAT IS NAME IS GETHUMANCHOICE 
+    CREATE A VARIABLE THAT SOTRES USER INPUT
+    RETURN USER INPUT
 
 */
 const ROCK = 'ROCK';
 const PAPER = 'PAPER';
 const SCISSORS = 'SCISSORS';
+
+let humanScore = 0;
+let computerScore = 0;
 
 function getComputerChoice(){
     let randomNumber = Math.random();
@@ -42,15 +43,7 @@ function getComputerChoice(){
 function getHumanChoice(){
 
     let choice = prompt('"ROCK" "PAPER" OR "SCISSORS"?¿');
-    if (choice === ROCK){
-        return PAPER;
-    } else if (choice === PAPER){
-        return SCISSORS;
-    } else if (choice === SCISSORS){
-        return ROCK;
-    } else {
-        return alert('It has to be ROCK PAPER OR SCISSORS');
-    }
+    return choice;
 
 }
 
