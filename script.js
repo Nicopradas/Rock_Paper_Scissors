@@ -58,14 +58,13 @@ function getComputerChoice(){
 function getHumanChoice(){
 
     let choice = prompt('"ROCK" "PAPER" OR "SCISSORS"?¿');
-    
+    return choice;
 
 }
 
 
 function playRound(humanSelection, computerSelection){
     let humanSelectionFixed = humanSelection.toUpperCase();
-    
     if ((humanSelectionFixed === PAPER) && (computerSelection === ROCK) ){
         humanScore++;
         console.log('You won! '+humanSelectionFixed+' beats '+computerSelection);
@@ -78,7 +77,10 @@ function playRound(humanSelection, computerSelection){
     } else if (humanSelectionFixed === computerSelection){
         console.log('It is a tie!');
 
-    } else {
+    } else if ((humanSelectionFixed != PAPER) || (humanSelectionFixed != SCISSORS) || (humanSelectionFixed != ROCK) ){
+        alert('YOUR INPUT IS NOT VALID');
+    } 
+        else {
         computerScore++;
         console.log('You lose! '+computerSelection+' beats '+humanSelectionFixed);
     }
