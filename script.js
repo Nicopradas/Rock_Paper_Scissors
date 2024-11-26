@@ -40,6 +40,7 @@ let computerScore = 0;
 
 
 
+
 function getComputerChoice(){
     let randomNumber = Math.random();
     
@@ -57,18 +58,41 @@ function getComputerChoice(){
 function getHumanChoice(){
 
     let choice = prompt('"ROCK" "PAPER" OR "SCISSORS"?¿');
-    return choice;
+    
 
 }
 
 
-function playRound(HumanSelection, ComputerSelection){
-    HumanSelectionFixed = HumanSelection.toUpperCase();
-    console.log(HumanSelectionFixed);
+function playRound(humanSelection, computerSelection){
+    let humanSelectionFixed = humanSelection.toUpperCase();
+    
+    if ((humanSelectionFixed === PAPER) && (computerSelection === ROCK) ){
+        humanScore++;
+        console.log('You won! '+humanSelectionFixed+' beats '+computerSelection);
+    } else if ((humanSelectionFixed === SCISSORS) && (computerSelection === PAPER) ){
+        humanScore++;
+        console.log('You won! '+humanSelectionFixed+' beats '+computerSelection);
+    } else if ((humanSelectionFixed === ROCK) && (computerSelection === SCISSORS) ){
+        humanScore++;
+        console.log('You won! '+humanSelectionFixed+' beats '+computerSelection);
+    } else if (humanSelectionFixed === computerSelection){
+        console.log('It is a tie!');
+
+    } else {
+        computerScore++;
+        console.log('You lose! '+computerSelection+' beats '+humanSelectionFixed);
+    }
+
+    console.log(computerSelection);
+    console.log(humanSelectionFixed);
+    
+    console.log('humanscore: '+humanScore);
+    console.log('computerscore: '+computerScore);
 }
 
+    playRound(getHumanChoice(), getComputerChoice());
 
-playRound(getHumanChoice(), getComputerChoice());
+
 
 
 
