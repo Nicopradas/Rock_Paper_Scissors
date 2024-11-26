@@ -22,11 +22,12 @@ CREATE A FUNCTION THAT IS NAME IS GETHUMANCHOICE
 
 CREATE A FUNCTION CALLED PLAYROUND WHICH TAKES AS AN ARGUMENTS HUMANCHOICE AND COMPUTERCHOICE
     CREATE VARIABLE THAT PUTS WHATEVER USER INPUTS IN HUMANCHOICE IN CAPITAL LETTERS
-    IF COMPUTER CHOICE IS ROCK AND HUMAN CHOICE IS PAPER THEN HUMANSCORE INCREASES BY 1
-    IF COMPUTER CHOICE IS PAPER AND HUMAN CHOICE IS SCISSORS THEN HUMANSCORE INCREASES BY 1
-    IF COMUTER CHOICE IS SCISSORS AND HUMAN CHOICE IS ROCK THEN HUMANSCORE INCREASES BY 1
+    IF COMPUTER CHOICE IS ROCK AND HUMAN CHOICE IS PAPER THEN HUMANSCORE INCREASES BY 1 AND SHOWS WHO WON AND WHY
+    IF COMPUTER CHOICE IS PAPER AND HUMAN CHOICE IS SCISSORS THEN HUMANSCORE INCREASES BY 1 AND SHOWS WHO WON AND WHY
+    IF COMUTER CHOICE IS SCISSORS AND HUMAN CHOICE IS ROCK THEN HUMANSCORE INCREASES BY 1 AND SHOWS WHO WON AND WHY
+    IF HUMAN CHOICE IS NOT PAPER OR SCISSORS OR ROCK THEN SHOWS AN ALERT EXPLAINING THAT IS WRONG
     IF COMPUTER CHOICE AND HUMAN CHOICE IS SAME THEN SHOWS TIE!
-    EVERYTHING ELSE COMPUTERSCORE INCREASES BY 1
+    EVERYTHING ELSE COMPUTERSCORE INCREASES BY 1 AND SHOWS WHO WON AND WHY
 
 
 
@@ -65,6 +66,7 @@ function getHumanChoice(){
 
 function playRound(humanSelection, computerSelection){
     let humanSelectionFixed = humanSelection.toUpperCase();
+    console.log(humanSelectionFixed);
     if ((humanSelectionFixed === PAPER) && (computerSelection === ROCK) ){
         humanScore++;
         console.log('You won! '+humanSelectionFixed+' beats '+computerSelection);
@@ -76,24 +78,21 @@ function playRound(humanSelection, computerSelection){
         console.log('You won! '+humanSelectionFixed+' beats '+computerSelection);
     } else if (humanSelectionFixed === computerSelection){
         console.log('It is a tie!');
+        console.log(humanSelectionFixed+' is the same as '+computerSelection);
 
-    } else if ((humanSelectionFixed != PAPER) || (humanSelectionFixed != SCISSORS) || (humanSelectionFixed != ROCK) ){
-        alert('YOUR INPUT IS NOT VALID');
-    } 
-        else {
+    }  else {
         computerScore++;
         console.log('You lose! '+computerSelection+' beats '+humanSelectionFixed);
     }
 
-    console.log(computerSelection);
-    console.log(humanSelectionFixed);
     
-    console.log('humanscore: '+humanScore);
-    console.log('computerscore: '+computerScore);
+    
+   
 }
 
     playRound(getHumanChoice(), getComputerChoice());
-
+    console.log('humanscore: '+humanScore);
+    console.log('computerscore: '+computerScore);
 
 
 
