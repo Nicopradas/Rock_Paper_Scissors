@@ -29,8 +29,8 @@ CREATE A FUNCTION CALLED PLAYROUND WHICH TAKES AS AN ARGUMENTS HUMANCHOICE AND C
     EVERYTHING ELSE COMPUTERSCORE INCREASES BY 1 AND SHOWS WHO WON AND WHY
 
 
-CREATE A FUNCTION CALLED PLAYGAME WHICH TAKES PLAYROUND AS AN ARGUMENT
-    IF THE SUM OF HUMANSCORE AND COMPUTERSCORE IS NOT 5, IT STILL USES PLAYROUND
+CREATE A FUNCTION CALLED PLAYGAME 
+    IF THE SUM OF HUMANSCORE AND COMPUTERSCORE IS NOT 5, IT CALLS AGAIN TO PLAYGAME
     IF THE SUM OF HUMANSCORE AND COMPUTERSCORE IS 5
         IF HUMANSCORE IS HIGHER THAN COMPUTERSCORE HUMAN HAS WON
         ELSE COMPUTER HAS WON
@@ -91,15 +91,28 @@ function playRound(humanSelection, computerSelection){
     }
 
     
-    
+    console.log('Score: '+humanScore+' - '+computerScore);
    
 }
 
+    
+
+function playGame(){
     playRound(getHumanChoice(), getComputerChoice());
-    console.log('humanscore: '+humanScore);
-    console.log('computerscore: '+computerScore);
 
+    if ((humanScore+computerScore)<5){
+        playGame();
+    } else{
+        if (humanScore>computerScore){
+            console.log('END GAME. You have won all 5 rounds');
+        } else{
+            console.log('END GAME. Computer has won all 5 rounds');
+        }
+    }
 
+}
+
+playGame();
 
 
 
