@@ -22,21 +22,6 @@ function getComputerChoice(){
     
 }
 
-function getHumanChoice(){
-
-
-    if (rock.addEventListener('click',()=>{})){
-        return rock.id;
-    } else if (paper.addEventListener('click',()=>{})){
-        return paper.id;
-    } else if (scissors.addEventListener('click',()=>{})){
-        return scissors.id;
-    }
-
-
-
-}
-
 
 function playRound(humanSelection, computerSelection){
     let humanSelectionFixed = humanSelection.toUpperCase();
@@ -66,13 +51,11 @@ function playRound(humanSelection, computerSelection){
 
     
 
-function playGame(){
     playRound(getHumanChoice(), getComputerChoice());
 
 
-}
 
-playGame();
+
 
 
 
