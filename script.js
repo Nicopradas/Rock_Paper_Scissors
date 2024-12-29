@@ -62,15 +62,6 @@ function playRound(humanSelection, computerSelection){
 function playGame(){
     playRound(getHumanChoice(), getComputerChoice());
 
-    if ((humanScore+computerScore)<5){
-        playGame();
-    } else{
-        if (humanScore>computerScore){
-            console.log('END GAME. You have won all 5 rounds');
-        } else{
-            console.log('END GAME. Computer has won all 5 rounds');
-        }
-    }
 
 }
 
