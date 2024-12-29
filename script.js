@@ -2,6 +2,10 @@
 const rock = document.querySelector('#rock');
 const paper = document.querySelector('#paper');
 const scissors = document.querySelector('#scissors');
+const score = document.querySelector('#score');
+const message = document.querySelector('#message');
+
+
 let humanScore = 0;
 let computerScore = 0;
 
@@ -39,24 +43,23 @@ function playRound(humanSelection, computerSelection){
     
     if ((humanSelection === 'paper') && (computerSelection === 'rock') ){
         humanScore++;
-        console.log('You won! '+humanSelection+' beats '+computerSelection);
+        message.textContent=('You won! '+humanSelection+' beats '+computerSelection);
     } else if ((humanSelection === 'scissors') && (computerSelection === 'paper') ){
         humanScore++;
-        console.log('You won! '+humanSelection+' beats '+computerSelection);
+        message.textContent=('You won! '+humanSelection+' beats '+computerSelection);
     } else if ((humanSelection === 'rock') && (computerSelection === 'scissors') ){
         humanScore++;
-        console.log('You won! '+humanSelection+' beats '+computerSelection);
+        message.textContent=('You won! '+humanSelection+' beats '+computerSelection);
     } else if (humanSelection === computerSelection){
-        console.log('It is a tie!');
-        console.log(humanSelection+' is the same as '+computerSelection);
+        message.textContent=(('It is a tie! ')+humanSelection+' is the same as '+computerSelection);
 
     }  else {
         computerScore++;
-        console.log('You lose! '+computerSelection+' beats '+humanSelection);
+        message.textContent=('You lose! '+computerSelection+' beats '+humanSelection);
     }
 
     
-    console.log('Score: '+humanScore+' - '+computerScore);
+    score.textContent= ('Score: '+humanScore+' - '+computerScore);
    
 }
 
