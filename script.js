@@ -1,7 +1,7 @@
 
-const ROCK = 'ROCK';
-const PAPER = 'PAPER';
-const SCISSORS = 'SCISSORS';
+const ROCK = document.querySelector('#rock');
+const PAPER = document.querySelector('#paper');
+const SCISSORS = document.querySelector('#scissors');
 
 let humanScore = 0;
 let computerScore = 0;
