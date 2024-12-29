@@ -1,8 +1,7 @@
 
-const ROCK = document.querySelector('#rock');
-const PAPER = document.querySelector('#paper');
-const SCISSORS = document.querySelector('#scissors');
-
+const rock = document.querySelector('#rock');
+const paper = document.querySelector('#paper');
+const scissors = document.querySelector('#scissors');
 let humanScore = 0;
 let computerScore = 0;
 
@@ -25,8 +24,16 @@ function getComputerChoice(){
 
 function getHumanChoice(){
 
-    let choice = prompt('"ROCK" "PAPER" OR "SCISSORS"?¿');
-    return choice;
+
+    if (rock.addEventListener('click',()=>{})){
+        return rock.id;
+    } else if (paper.addEventListener('click',()=>{})){
+        return paper.id;
+    } else if (scissors.addEventListener('click',()=>{})){
+        return scissors.id;
+    }
+
+
 
 }
 
@@ -34,13 +41,13 @@ function getHumanChoice(){
 function playRound(humanSelection, computerSelection){
     let humanSelectionFixed = humanSelection.toUpperCase();
     console.log(humanSelectionFixed);
-    if ((humanSelectionFixed === PAPER) && (computerSelection === ROCK) ){
+    if ((humanSelectionFixed === 'paper') && (computerSelection === ROCK) ){
         humanScore++;
         console.log('You won! '+humanSelectionFixed+' beats '+computerSelection);
-    } else if ((humanSelectionFixed === SCISSORS) && (computerSelection === PAPER) ){
+    } else if ((humanSelectionFixed === 'scissors') && (computerSelection === PAPER) ){
         humanScore++;
         console.log('You won! '+humanSelectionFixed+' beats '+computerSelection);
-    } else if ((humanSelectionFixed === ROCK) && (computerSelection === SCISSORS) ){
+    } else if ((humanSelectionFixed === 'rock') && (computerSelection === SCISSORS) ){
         humanScore++;
         console.log('You won! '+humanSelectionFixed+' beats '+computerSelection);
     } else if (humanSelectionFixed === computerSelection){
