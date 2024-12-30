@@ -59,7 +59,6 @@ function playRound(humanSelection, computerSelection){
         message.textContent=('You lose! '+computerSelection+' beats '+humanSelection);
     }
 
-    
     score.textContent= ('Score: '+humanScore+' - '+computerScore);
    
     if (humanScore == 5 || computerScore == 5){
@@ -76,8 +75,10 @@ function announceWinner(humanScore, computerScore){
     const winner = document.createElement('p');
     if (humanScore == 5){
         winner.textContent = 'WINNER IS HUMAN!';
+        winner.style.color = 'green';
         message.appendChild(winner);
     } else if (computerScore == 5) {
+        winner.style.color = 'red';
         winner.textContent = 'WINNER IS COMPUTER!';
         message.appendChild(winner);
     }
