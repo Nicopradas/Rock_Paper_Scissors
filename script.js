@@ -15,10 +15,11 @@ rock.addEventListener('click',()=>{
 });
 paper.addEventListener('click',()=>{
     playRound(paper.id,getComputerChoice());
-
+    
 });
 scissors.addEventListener('click',()=>{
     playRound(scissors.id,getComputerChoice());
+    
 });
 
 
@@ -61,9 +62,25 @@ function playRound(humanSelection, computerSelection){
     
     score.textContent= ('Score: '+humanScore+' - '+computerScore);
    
+    if (humanScore == 5 || computerScore == 5){
+        announceWinner(humanScore,computerScore);
+        humanScore=0;
+        computerScore=0;
+        score.textContent= ('Score: '+humanScore+' - '+computerScore);
+
+    }
 }
 
     
-
+function announceWinner(humanScore, computerScore){
+    const winner = document.createElement('p');
+    if (humanScore == 5){
+        winner.textContent = 'WINNER IS HUMAN!';
+        message.appendChild(winner);
+    } else if (computerScore == 5) {
+        winner.textContent = 'WINNER IS COMPUTER!';
+        message.appendChild(winner);
+    }
+}
    
 
