@@ -4,6 +4,8 @@ const paper = document.querySelector('#paper');
 const scissors = document.querySelector('#scissors');
 const score = document.querySelector('#score');
 const message = document.querySelector('#message');
+const messages = document.querySelector('.messages');
+const winner = document.createElement('p');
 
 
 let humanScore = 0;
@@ -67,21 +69,25 @@ function playRound(humanSelection, computerSelection){
         computerScore=0;
         score.textContent= ('Score: '+humanScore+' - '+computerScore);
 
+    }else{
+        messages.removeChild(winner);
+
     }
 }
 
-    
+
 function announceWinner(humanScore, computerScore){
-    const winner = document.createElement('p');
     if (humanScore == 5){
         winner.textContent = 'WINNER IS HUMAN!';
         winner.style.color = 'green';
-        message.appendChild(winner);
+        messages.appendChild(winner);
+
     } else if (computerScore == 5) {
         winner.style.color = 'red';
         winner.textContent = 'WINNER IS COMPUTER!';
-        message.appendChild(winner);
-    }
+        messages.appendChild(winner);
+    } 
+
 }
    
 

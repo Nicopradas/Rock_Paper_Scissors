@@ -1,0 +1,12 @@
+
+/* CENTER OF THE PAGE */
+.buttons{
+    display:flex;
+    justify-content: center;
+    gap: 20px;
+}
+.messages{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
