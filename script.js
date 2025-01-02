@@ -7,6 +7,8 @@ const message = document.querySelector('#message');
 const messages = document.querySelector('.messages');
 const winner = document.createElement('p');
 
+score.textContent='YOUR TURN!';
+
 
 let humanScore = 0;
 let computerScore = 0;
@@ -78,13 +80,18 @@ function playRound(humanSelection, computerSelection){
 
 function announceWinner(humanScore, computerScore){
     if (humanScore == 5){
-        winner.textContent = 'WINNER IS HUMAN!';
+        winner.textContent = 'Winner is human!';
         winner.style.color = 'green';
+        
+        winner.id= 'score';
         messages.appendChild(winner);
 
     } else if (computerScore == 5) {
         winner.style.color = 'red';
-        winner.textContent = 'WINNER IS COMPUTER!';
+        winner.textContent = 'Winner is computer!';
+        winner.id= 'score';
+
+
         messages.appendChild(winner);
     } 
 
